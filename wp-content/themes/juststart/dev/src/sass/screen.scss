@@ -1,0 +1,20 @@
+@import 'sub/utilities/mixins';
+@import 'sub/utilities/variables';
+@import 'sub/base/normalize';
+@import 'sub/base/layout';
+@import 'sub/base/universal';
+@import 'sub/partials/header';
+@import 'sub/partials/footer';
+
+//PLUGS
+@import 'sub/plugs/swiper';
+
+//COMPONENTS
+@import 'sub/components/offer-banner';
+@import 'sub/components/instagram-feed';
+@import 'sub/components/newsletter';
+
+
+//PAGES
+@import 'sub/page-templates/frontpage';
+@import 'sub/page-templates/offer';

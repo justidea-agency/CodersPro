@@ -1,0 +1,35 @@
+.offer-banner {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  &::after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: '';
+    background-color: rgba($black, .25);
+    z-index: 2;
+  }
+  &__header {
+    color: $white;
+    font-size: 5rem;
+    font-weight: 300;
+    font-family: $decorative-font;
+    position: relative;
+    z-index: 3;
+  }
+  &__btn {
+    position: relative;
+    z-index: 3;
+    padding: 15px 30px;
+    margin-top: 40px;
+  }
+}
