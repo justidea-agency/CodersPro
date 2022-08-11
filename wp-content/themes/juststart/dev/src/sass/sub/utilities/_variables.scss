@@ -2,19 +2,19 @@
 $white: #fff;
 $black: #000;
 $body-bg: #fff;
-$text-color: #000;
+$text-color: #151542;
 $text-color-light: #838383;
 $secondary-font: #835281;
 
-$main-color: #D1AD48;
-$secondary-color: #E8E8E8; 
-$tertiary-color: #AE9C69; 
-$dark-color: #1b1b1b;
+$main-color: #BE4073;
+$secondary-color: #823492; 
 
+$linear-primary: linear-gradient(117.45deg, #BE4073 34.39%, #823492 93.56%);
+$linear-secondary: linear-gradient(117.45deg, #823492 34.39%, #BE4073 93.56%);
 /** FONTS **/
-$font-text: 'Be Vietnam Pro', sans-serif;
+$font-text: 'Monrope', sans-serif;
+// $decorative-font: 'zooja-pro', sans-serif;
 
-$decorative-font: 'zooja-pro', sans-serif;
 /** RESPONSIVE BREAKPOINTS **/
 $breakpoints: (
   sm: 576px,

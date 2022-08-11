@@ -1,15 +1,29 @@
+.primary-btn{
+  display: block;
+  color: $white;
+  background: #BE4073;
+  background: $linear-primary;
+  transition: all ease-in-out .3s;
+  border-radius: 13px;
+  font-family: $font-text;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 18px 38px; 
+  max-width: 185px;
+}
+
 .large__heading{
   font-family: $font-text;
   color: $black;
   font-size: 5.625rem;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .secondary__section{
   background: #E8E8E8;
   width: 100%;
 }
-//
+
 .btn {
   text-transform: uppercase;
   vertical-align: middle;
@@ -47,7 +61,6 @@
 
 .section-header {
   font-size: 1.125rem;
-  color: $dark-color;
   text-transform: uppercase;
   font-weight: 600;
   position: relative;
@@ -58,7 +71,6 @@
     content: '';
     width: 105px;
     height: 1px;
-    background-color: $dark-color;
     display: inline-block;
     transform: translateX(-25px);
     vertical-align: middle;
@@ -67,36 +79,15 @@
     content: '';
     width: 105px;
     height: 1px;
-    background-color: $dark-color;
     display: inline-block;
     transform: translateX(25px);
     vertical-align: middle;
   }
 }
 
-.decorative-header {
-  font-size: 5.625rem;
-  color: $dark-color;
-  font-weight: 300;
-  font-family: $decorative-font;
-  &--bold {
-    font-size: 3.125rem;
-    font-weight: 400;
-  }
-}
-
-.category-header {
-  color: $dark-color;
-  font-size: 3.125rem;
-  font-weight: 400;
-  font-family: $decorative-font;
-  text-align: center;
-  margin-top: 150px;
-}
 
 .category-description {
   font-size: 1rem;
-  color: $dark-color;
   font-weight: 300;
   text-align: center;
 }
@@ -118,7 +109,6 @@
     text-transform: uppercase;
   }
   &__btn {
-    color: $dark-color;
     padding: 0;
     border: 0;
     background-color: transparent;

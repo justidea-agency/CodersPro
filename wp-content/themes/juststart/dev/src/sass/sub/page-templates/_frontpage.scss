@@ -28,7 +28,6 @@
   height: 100%;
 }
 .home-benefits__text-wrapper{
-  background: $tertiary-color;
   height: 100%;
   padding: 7rem 7.125rem 5.3125rem 7.125rem;
   @include media('fhd'){
@@ -190,7 +189,6 @@ h2.benefits__header{
   }
   &__title {
     font-size: 24px;
-    color: $dark-color;
     font-family: $secondary-font;
     font-weight: 600;
   }

@@ -6,7 +6,9 @@ function justidea_files()
   wp_enqueue_script('customs', get_theme_file_uri('/assets/js/custom.js'), null, '1.0', true);
 	wp_enqueue_style('styles', get_theme_file_uri('/assets/css/app.css'));
 	wp_enqueue_style('customs', get_theme_file_uri('/assets/css/custom.css'));
+	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap', false);
 
+	
 	// Creating a variable in html file and nounce for secure log - rootData.root_url
 	wp_localize_script('justIdea', 'rootData', array(
 		'root_url' => get_site_url(),
@@ -37,21 +39,9 @@ function justidea_features()
 add_action('after_setup_theme', 'justidea_features');
 
 
-// Stylings and settings for custom login admin panel
-function my_login_stylesheet() {
-	wp_enqueue_style( 'custom-login', get_theme_file_uri('assets/css/style-login.css'));
-}
-add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
-
-function custom_loginlogo_url() {
-	return 'https://justidea.agency';
-}
-add_filter( 'login_headerurl', 'custom_loginlogo_url' );
-
-
 // Creating a custom menu
 function custom_new_menu() {
-  // register_nav_menu('menu-glowne',__( 'Menu Główne' ));
+  register_nav_menu('main-menu',__( 'Main Menu' ));
   // register_nav_menu('submenu',__( 'Submenu' ));
 }
 add_action( 'init', 'custom_new_menu' );
@@ -96,7 +86,6 @@ add_action( 'admin_init', 'disable_autosave' );
   function disable_autosave() {
   wp_deregister_script( 'autosave' );
 }
-
 
 // More wider gutenberg editor
 function wp436784723890_expand_gutenberg_edit_area() {

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The header for our theme
  *
@@ -12,8 +13,9 @@
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
@@ -21,39 +23,29 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'justidea-theme' ); ?></a>
+	<header class="header wrapper">
+		<nav class="header__nav">
+			<a class="header__logo-wrapper" href="<?php echo get_home_url() ?>/">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="coderspro logo" class="header__logo">
+			</a>
+			<?php wp_nav_menu(); ?>
+		</nav>
+	</header>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$justidea_theme_description = get_bloginfo( 'description', 'display' );
-			if ( $justidea_theme_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $justidea_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'justidea-theme' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+	<header class="header-burger closed wrapper">
+		<!--<img src="<?php echo get_template_directory_uri(); ?>/assets/img/menu-bg-small.png"
+         class="header-burger__white-bg" alt="Logo header">-->
+		<!-- <a href="<?php echo get_home_url(); ?>/" aria-label="Justidea homepage">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-mobile.png" alt="logo"
+                class="header-burger__logo">
+        </a> -->
+		<div class="hamburger">
+			<a class="header__logo--mobile" href="<?php echo get_home_url() ?>/">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="coderspro logo" class="header__logo">
+			</a>
+			<button class="menu-button hamburger__button js-menu__toggle">
+				<span class="hamburger__label"></span>
+			</button>
+		</div>
+		<?php wp_nav_menu() ?>
+	</header>
