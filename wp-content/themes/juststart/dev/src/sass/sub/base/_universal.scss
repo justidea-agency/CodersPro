@@ -12,6 +12,32 @@
   max-width: 185px;
 }
 
+p{
+  color: $text-color;
+  font-weight: 400;
+  font-size: .875rem;
+  line-height: 24px;
+  margin-block-end: 0;
+  margin-bottom: 20px;
+}
+
+.primary-image-layer{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(114.12deg, rgba(190, 64, 115, 0.7) 21.78%, rgba(130, 52, 146, 0.252) 51.39%, rgba(130, 52, 146, 0.7) 82.27%);
+  z-index: 0;
+}
+.secondary-header{
+  color: $main-color;
+  font-size: 1.875rem;
+  line-height: 66px;
+  font-family: $font-text;
+  font-weight: 700;
+}
+
 .large__heading{
   font-family: $font-text;
   color: $black;

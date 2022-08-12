@@ -8,6 +8,9 @@ function justidea_files()
 	wp_enqueue_style('customs', get_theme_file_uri('/assets/css/custom.css'));
 	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap', false);
 
+	if(is_front_page()){
+		wp_enqueue_script('lottie-player', 'https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js', false);
+	};
 	
 	// Creating a variable in html file and nounce for secure log - rootData.root_url
 	wp_localize_script('justIdea', 'rootData', array(
@@ -18,7 +21,15 @@ function justidea_files()
 add_action('wp_enqueue_scripts', 'justidea_files');
 
 
-
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page(array(
+		'page_title' => 'Site Information',
+		'menu_title' => 'Site Information',
+		'menu_slug' => 'site-information',
+		'capability' => 'edit_posts',
+		'redirect' => false
+	));
+};
 
 
 function justidea_features()
@@ -42,6 +53,8 @@ add_action('after_setup_theme', 'justidea_features');
 // Creating a custom menu
 function custom_new_menu() {
   register_nav_menu('main-menu',__( 'Main Menu' ));
+  register_nav_menu('footer-menu',__( 'Footer Menu' ));
+
   // register_nav_menu('submenu',__( 'Submenu' ));
 }
 add_action( 'init', 'custom_new_menu' );
@@ -57,28 +70,31 @@ function add_file_types_to_uploads($file_types){
 add_filter('upload_mimes', 'add_file_types_to_uploads');
 
 
+
+
 // Custom Post Types
-function justidea_post_types() {
-	// register_post_type('orders', array(
-	// 	'labels' => array(
-	// 		'name' => 'Zamówienia',
-	// 		'singular_name' => 'Zamówienie',
-  //     'add_new' => 'Dodaj nowe',
-  //     'edit_item' => 'Edytuj zamówienie',
-  //     'add_new_item' => 'Dodaj nowe zamówienie' 
-	// 	),
-  //   'description' => 'Zamówienia',
-	// 	'public' => true,
-	// 	'has_archive' => true,
-	// 	'menu_position' => 6,
-  //   'menu_icon' => 'dashicons-desktop',
-  //   'show_in_rest' => true,
-	// 	'supports' => array( 'title', 'thumbnail', 'editor', 'revisions', 'custom-fields' ),
-	// 	'rewrite' => array('slug' => 'zamowienie'),
-	// 	'taxonomies' => array( 'category' ),
-  // ));
-}
-add_action('init', 'justidea_post_types', 0);
+
+// function justidea_post_types() {
+// 	register_post_type('orders', array(
+// 		'labels' => array(
+// 			'name' => 'Zamówienia',
+// 			'singular_name' => 'Zamówienie',
+//       'add_new' => 'Dodaj nowe',
+//       'edit_item' => 'Edytuj zamówienie',
+//       'add_new_item' => 'Dodaj nowe zamówienie' 
+// 		),
+//     'description' => 'Zamówienia',
+// 		'public' => true,
+// 		'has_archive' => true,
+// 		'menu_position' => 6,
+//     'menu_icon' => 'dashicons-desktop',
+//     'show_in_rest' => true,
+// 		'supports' => array( 'title', 'thumbnail', 'editor', 'revisions', 'custom-fields' ),
+// 		'rewrite' => array('slug' => 'zamowienie'),
+// 		'taxonomies' => array( 'category' ),
+//   ));
+// }
+// add_action('init', 'justidea_post_types', 0);
 
 
 // this settings not working we need to fix it (disable guttenberg autosave)

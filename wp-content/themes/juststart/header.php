@@ -28,17 +28,13 @@
 			<a class="header__logo-wrapper" href="<?php echo get_home_url() ?>/">
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="coderspro logo" class="header__logo">
 			</a>
-			<?php wp_nav_menu(); ?>
+			<?php wp_nav_menu(array(
+				'theme_location' => 'main-menu'
+			)); ?>
 		</nav>
 	</header>
 
 	<header class="header-burger closed wrapper">
-		<!--<img src="<?php echo get_template_directory_uri(); ?>/assets/img/menu-bg-small.png"
-         class="header-burger__white-bg" alt="Logo header">-->
-		<!-- <a href="<?php echo get_home_url(); ?>/" aria-label="Justidea homepage">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-mobile.png" alt="logo"
-                class="header-burger__logo">
-        </a> -->
 		<div class="hamburger">
 			<a class="header__logo--mobile" href="<?php echo get_home_url() ?>/">
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="coderspro logo" class="header__logo">
@@ -47,5 +43,9 @@
 				<span class="hamburger__label"></span>
 			</button>
 		</div>
-		<?php wp_nav_menu() ?>
+		<?php wp_nav_menu(
+			array(
+				'theme_location' => 'main-menu'
+			)
+		) ?>
 	</header>
