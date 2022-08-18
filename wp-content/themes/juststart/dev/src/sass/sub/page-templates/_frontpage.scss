@@ -116,6 +116,8 @@
 .home-about {
   margin-top: 48px;
   margin-bottom: 88px;
+  margin-left: auto;
+  margin-right: auto;
   &__text:last-of-type {
     margin-bottom: 53px;
   }
@@ -126,5 +128,585 @@
   img {
     width: 100%;
     height: auto;
+  }
+  @include media("md") {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    &__text-wrapper {
+      width: 40%;
+    }
+    &__img-container {
+      width: 53%;
+      position: relative;
+      max-width: 680px;
+      height: auto;
+    }
+    &:after {
+      content: "";
+      width: 187px;
+      height: 229px;
+      position: absolute;
+      left: 20px;
+      top: -40px;
+      background: url("../img/about-pink-decorator.svg");
+      z-index: 5;
+    }
+    &:before {
+      content: "";
+      width: 63px;
+      height: 64px;
+      position: absolute;
+      bottom: -75px;
+      left: 20px;
+      background: url("../img/pink-square-decorator.svg");
+    }
+    &__text-wrapper {
+      &:after {
+        content: "";
+        width: 187px;
+        height: 229px;
+        transform: scale(0.7);
+        position: absolute;
+        bottom: -145px;
+        right: 80px;
+        background: url("../img/about-pink-decorator.svg");
+      }
+    }
+  }
+  @include media("lg") {
+    margin-top: 155px;
+    margin-bottom: 155px;
+    &:after,
+    &:before {
+      left: 30px;
+    }
+    &.container {
+      padding: 0;
+    }
+    &__img-container {
+      margin-left: 30px;
+      width: 44%;
+    }
+    &__text-wrapper {
+      margin-right: 30px;
+      position: relative;
+      &:before {
+        content: "";
+        width: 63px;
+        height: 64px;
+        position: absolute;
+        top: -65px;
+        right: 0;
+        background: url("../img/pink-square-decorator.svg");
+      }
+      &:after {
+        transform: none;
+        bottom: -185px;
+      }
+    }
+  }
+  &__img-container {
+    @include media("xl") {
+      &:after {
+        content: "";
+        width: 228px;
+        height: 186px;
+        position: absolute;
+        right: -100px;
+        top: 200px;
+        background: url("../img/about-purple-decorator.svg") no-repeat;
+        z-index: -1;
+      }
+    }
+  }
+
+  @include media("xxl") {
+  }
+}
+
+.home-courses {
+  margin-left: auto;
+  margin-right: auto;
+  &__header {
+    position: relative;
+    padding-left: 55px;
+    &:before {
+      content: "";
+      width: 40px;
+      height: 54px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url("../img/java-icon.svg") no-repeat center;
+    }
+  }
+  &__btn {
+    padding: 23px 38px;
+    max-width: initial;
+    width: auto;
+    margin-bottom: 68px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__text {
+    margin-bottom: 44px;
+  }
+  &__table {
+    margin-bottom: 41px;
+  }
+  @include media("lg") {
+    &.container {
+      padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    &__btn {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+      transform: translateY(-42px);
+    }
+  }
+}
+
+.home-benefits {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 35px;
+  &__header {
+    margin-bottom: 8px;
+  }
+  &__img-container {
+    position: relative;
+    &:before {
+      position: absolute;
+      content: "";
+      width: 154px;
+      height: calc(100% + 10px);
+      left: -5px;
+      top: -5px;
+      background: linear-gradient(133.41deg, #be4073 28.16%, #823492 97.58%);
+      z-index: -3;
+    }
+  }
+  @include media("md") {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 115px;
+    &__content {
+      width: 50%;
+      position: relative;
+      &::after {
+        content: "";
+        width: 63px;
+        height: 64px;
+        position: absolute;
+        top: -35px;
+        right: -100px;
+        background: url("../img/pink-square-decorator.svg");
+      }
+    }
+    &__img-container {
+      width: 40%;
+      position: relative;
+      &:after {
+        content: "";
+        width: 186px;
+        height: 226px;
+        position: absolute;
+        right: 20px;
+        transform: scale(0.7);
+        bottom: -150px;
+        background: url("../img/image-decorator.svg");
+      }
+    }
+  }
+  @include media("lg") {
+    &.container {
+      padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    margin-bottom: 80px;
+    &__content {
+      width: 45%;
+    }
+    &__img-container {
+      width: 44%;
+      &:after {
+        transform: scale(0.85);
+        right: 40px;
+      }
+      &:before {
+        width: 44%;
+        max-width: 306px;
+      }
+    }
+  }
+
+  @include media("xl") {
+    margin-top: 146px;
+    margin-bottom: 160px;
+    &__img-container {
+      &:after {
+        right: 88px;
+        transform: none;
+      }
+    }
+  }
+  @include media("xxl") {
+    margin-top: 196px;
+    margin-bottom: 280px;
+  }
+}
+
+.home-work {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 88px;
+  &__header {
+    margin-bottom: 8px;
+  }
+  &__img-container {
+    position: relative;
+    &:before {
+      position: absolute;
+      content: "";
+      width: 154px;
+      height: calc(100% + 10px);
+      right: -5px;
+      top: -5px;
+      background: linear-gradient(133.41deg, #be4073 28.16%, #823492 97.58%);
+      z-index: -3;
+    }
+  }
+
+  @include media("md") {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    &__content {
+      width: 46%;
+      position: relative;
+      &::after {
+        content: "";
+        width: 63px;
+        height: 64px;
+        position: absolute;
+        top: -15px;
+        right: 0px;
+        background: url("../img/pink-square-decorator.svg");
+      }
+    }
+    &__img-container {
+      width: 44%;
+      position: relative;
+      &:after {
+        content: "";
+        width: 187px;
+        height: 229px;
+        position: absolute;
+        left: -28px;
+        transform: scale(0.7);
+        top: -120px;
+        background: url("../img/home-work-decorator.svg");
+      }
+    }
+  }
+
+  @include media("lg") {
+    &__img-container {
+      &:before {
+        width: 44%;
+        max-width: 306px;
+      }
+      &:after {
+        transform: none;
+        left: 0;
+      }
+    }
+    &.container {
+      padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+}
+
+.home-finances {
+  background: rgba(130, 52, 146, 0.1);
+  position: relative;
+  &__decorator {
+    position: absolute;
+    display: none;
+  }
+  &.wrapper {
+    margin: 0;
+    padding: 0 20px;
+  }
+  &__header {
+    @extend .secondary-header;
+    color: $secondary-color;
+    text-align: center;
+    padding-top: 55px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 66px;
+  }
+  &__subtitle {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 34px;
+    text-align: center;
+    color: $text-color;
+    padding: 0 30px;
+    margin-bottom: 31px;
+  }
+  &__parts {
+    padding-left: 15px;
+    font-size: 14px;
+    color: $text-color;
+  }
+  &__part {
+    position: relative;
+    margin-bottom: 10px;
+    &:before {
+      content: "";
+      position: absolute;
+      left: -15px;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      background: $main-color;
+    }
+    &:last-of-type {
+      margin-bottom: 42px;
+    }
+  }
+  &__options-header {
+    color: $main-color;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 80px;
+  }
+  @include media("sm") {
+    &.wrapper {
+      padding-right: 80px;
+      padding-left: 80px;
+    }
+  }
+  @include media("md") {
+    &__decorator {
+      display: block;
+    }
+    & .dec-1 {
+      transform: scale(0.7);
+      right: 20px;
+      top: -60px;
+    }
+    & .dec-2 {
+      transform: translateY(-50%) scale(0.7);
+      left: 0;
+      top: 40%;
+    }
+    & .dec-3 {
+      left: 0;
+      top: 120px;
+    }
+    & .dec-4 {
+      width: 62px;
+      height: 62px;
+      border: 1px solid $main-color;
+      bottom: 0;
+      right: 60px;
+    }
+    & .dec-5 {
+      display: none;
+    }
+    &.wrapper {
+      padding-right: 120px;
+      padding-left: 120px;
+    }
+    &__parts {
+      margin-left: 50px;
+    }
+  }
+  @include media("lg") {
+    & .dec-1 {
+      transform: none;
+      right: 20px;
+      top: -60px;
+    }
+    & .dec-2 {
+      transform: translateY(-50%);
+      left: 0;
+      top: 40%;
+    }
+    & .dec-4 {
+      transform: none;
+    }
+    & .dec-5 {
+      display: block;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+    &__header {
+      margin-bottom: 45px;
+    }
+    &__parts {
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    &__part {
+      font-size: 1rem;
+      &:last-of-type {
+        margin-bottom: 60px;
+      }
+    }
+    &__options {
+      display: flex;
+    }
+    &.wrapper {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+  }
+  @include media("xl") {
+    &.wrapper {
+      padding: 0;
+      margin-left: 46px;
+      margin-right: 46px;
+    }
+    &__header {
+      font-size: 3.75rem;
+      line-height: 66px;
+      padding-top: 116px;
+    }
+    &__options {
+      max-width: 1060px;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+    &__parts {
+      max-width: 760px;
+    }
+  }
+
+  .finances-option {
+    padding-bottom: 91px;
+    &__logo {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 47px;
+      width: 137px;
+      height: 147px;
+      margin-left: auto;
+      margin-right: auto;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 21px;
+        height: 21px;
+        background: $secondary-color;
+        opacity: 0.1;
+        top: 15px;
+        left: -40px;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        background: $secondary-color;
+        opacity: 0.1;
+        width: 61px;
+        height: 61px;
+        bottom: -15px;
+        right: -45px;
+      }
+    }
+    &:nth-of-type(2n) {
+      .finances-option__logo {
+        &:before {
+          content: "";
+          position: absolute;
+          width: 61px;
+          height: 61px;
+          background: $secondary-color;
+          opacity: 0.1;
+          top: -25px;
+          left: -35px;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          background: $secondary-color;
+          opacity: 0.1;
+          width: 21px;
+          height: 21px;
+          bottom: -5px;
+          right: -40px;
+        }
+      }
+    }
+    &:nth-of-type(2) {
+      .finances-option__header {
+        padding: 0 40px;
+      }
+    }
+    &__header {
+      font-size: 1.875rem;
+      font-weight: 700;
+      line-height: 36px;
+      text-align: center;
+      color: $secondary-color;
+      margin-bottom: 20px;
+    }
+    &__text {
+      color: $text-color;
+      font-size: 1rem;
+      text-align: center;
+    }
+    @include media("lg") {
+      width: 50%;
+      padding-bottom: 120px;
+      &__text {
+        max-width: 540px;
+        margin: 0 auto;
+      }
+    }
+    @include media("xl") {
+      width: 47%;
+      &__header {
+        font-size: 40px;
+        line-height: 66px;
+        padding: 0;
+      }
+      &__text {
+        font-size: 1rem;
+      }
+    }
   }
 }

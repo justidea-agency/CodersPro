@@ -1,0 +1,75 @@
+.course {
+  position: relative;
+  background: rgba(80, 46, 121, 0.15);
+  padding: 58px 13px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  &:nth-of-type(2n) {
+    background: rgba(190, 64, 115, 0.15);
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  &__data {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 38px;
+    &-label {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 22px;
+      color: $main-color;
+    }
+    &-content {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 40px;
+      padding-top: 6px;
+      color: $secondary-color;
+    }
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+  }
+  &__regular-price {
+    padding-left: 16px;
+    color: $secondary-color;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 40px;
+    text-decoration: line-through;
+  }
+  &__promotion-label {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: $main-color;
+    color: $white;
+    font-weight: 700;
+    line-height: 22px;
+    padding: 4px 20px;
+    color: white;
+  }
+  @include media("md") {
+    &__data {
+      width: 33.33%;
+    }
+  }
+  @include media("lg") {
+    padding: 38px 22px 0 22px;
+    margin-bottom: 30px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  @include media("xxl") {
+    &__data {
+      width: 20%;
+    }
+  }
+}
