@@ -597,8 +597,7 @@
   @include media("xl") {
     &.wrapper {
       padding: 0;
-      margin-left: 46px;
-      margin-right: 46px;
+      margin: 0 30px;
     }
     &__header {
       font-size: 3.75rem;
@@ -614,7 +613,12 @@
       max-width: 760px;
     }
   }
-
+  @include media('xxl'){
+    &.wrapper{
+      margin-left: 45px;
+      margin-right: 45px;
+    }
+  }
   .finances-option {
     padding-bottom: 91px;
     &__logo {

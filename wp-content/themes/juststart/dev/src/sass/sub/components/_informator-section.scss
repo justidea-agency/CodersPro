@@ -1,0 +1,249 @@
+.informator {
+  position: relative;
+  background-color: $main-color;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+  }
+  &__img {
+    z-index: 5;
+    position: absolute;
+    left: 50%;
+    transform: translate(-44%, -90px);
+    width: 320px;
+    height: auto;
+  }
+  &__books-container {
+    position: relative;
+    z-index: 2;
+    &:after {
+      content: "";
+      position: absolute;
+      background: url("../img/about-purple-decorator.svg") no-repeat center;
+      width: 228px;
+      height: 186px;
+      transform: rotate(90deg);
+      right: -36px;
+      top: 105px;
+      z-index: -1;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      background: url("../img/about-purple-decorator.svg");
+      width: 228px;
+      height: 186px;
+      transform: rotate(-90deg);
+      top: 80px;
+      left: -20%;
+      z-index: 0;
+    }
+  }
+  &__content {
+    color: $white;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    padding-top: 290px;
+  }
+  &__header {
+    position: relative;
+    display: block;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 2.875rem;
+    margin-bottom: 15px;
+    z-index: 0;
+    &:first-of-type {
+      margin-bottom: 0;
+      &:before {
+        content: "";
+        position: absolute;
+        border: 1px solid $secondary-color;
+        width: 63px;
+        height: 64px;
+        left: -45px;
+        top: -20px;
+        z-index: -1;
+      }
+    }
+  }
+  &__text {
+    font-weight: 500;
+    font-size: 1rem;
+    color: $white;
+    margin-bottom: 68px;
+  }
+  &__btn {
+    position: relative;
+    outline: none;
+    background: $white;
+    color: $main-color;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 25px;
+    border-radius: 13px;
+    padding: 18px 81px 18px 30px;
+    &:after {
+      content: "";
+      position: absolute;
+      background: url("../img/informator/pdf-icon.svg") no-repeat center;
+      width: 28px;
+      height: 30px;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%);
+    }
+  }
+  @media only screen and (min-width: 380px){
+    &__img {
+      width: 345px;
+    }
+  }
+  @media only screen and (min-width: 380px){
+    &__img {
+      width: 348px;
+    }
+  }
+  @include media("sm") {
+    &__container {
+      padding: 30px;
+    }
+    &__books-container {
+      &:before {
+        content: "";
+        position: absolute;
+        background: url("../img/about-purple-decorator.svg");
+        width: 228px;
+        height: 186px;
+        transform: rotate(-90deg);
+        top: 40px;
+        left: 0;
+        z-index: 0;
+      }
+    
+    }
+    &__img {
+      width: 390px;
+    }
+  }
+  @include media("md") {
+    &__header:last-of-type {
+      margin-bottom: 35px;
+    }
+    &__content {
+      margin-top: 50px;
+      margin-bottom: 70px;
+    }
+    &__books-container {
+      width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &__img {
+      width: 450px;
+      transform: translate(-44%, -130px);
+    }
+    &__text {
+      max-width: 600px;
+    }
+  }
+  @include media("lg") {
+    &__header {
+      margin-bottom: 10px;
+    }
+    &__text {
+      margin-bottom: 56px;
+    }
+    &__content {
+      margin-top: 30px;
+      margin-bottom: 50px;
+      padding-top: 0;
+      padding-left: 40px;
+    }
+    &__container {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      padding: 10px 30px 10px 30px;
+    }
+    &__img {
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  @include media("xl") {
+    margin: 0 30px;
+    &:before {
+      content: "";
+      position: absolute;
+      background: url("../img/informator/decorator-2.svg");
+      right: 0;
+      bottom: 10px;
+      width: 187px;
+      height: 227px;
+    }
+    &__container {
+      padding: 0;
+      max-width: 1410px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &__content {
+      margin-top: 0px;
+      margin-bottom: 50px;
+      padding-top: 40px;
+      padding-left: 0;
+      position: relative;
+      &:after {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        content: "";
+        top: 0;
+        right: 140px;
+        background: $secondary-color;
+      }
+    }
+    &__books-container {
+      width: 33.33333333%;
+      &:before {
+        top: 110px;
+        left: -20px;
+      }
+    }
+    &__text {
+      max-width: 688px;
+    }
+  }
+  @include media("xxl") {
+    margin: 0 45px;
+    &__content {
+      margin-top: 0;
+      padding-top: 55px;
+      margin-bottom: 75px;
+    }
+    &__img {
+      min-width: 590px;
+    }
+    &:after {
+      right: 90px;
+    }
+  }
+
+  @include media("xxxl") {
+    &:after {
+      content: "";
+      position: absolute;
+      background: url("../img/informator/decorator-1.svg");
+      left: 0;
+      top: 10px;
+      width: 187px;
+      height: 227px;
+    }
+    &__img {
+      min-width: 530px;
+      transform: translate(-50%, -54%);
+    }
+  }
+}

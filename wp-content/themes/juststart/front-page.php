@@ -214,5 +214,7 @@ $hero_text = get_field('text_hero');
 
   </section>
 </main>
-
+<?php 
+  include(locate_template("components/informator-section.php", false, false));
+?>
 <?php get_footer(); ?>

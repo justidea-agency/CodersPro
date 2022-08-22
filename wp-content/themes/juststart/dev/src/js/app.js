@@ -1,3 +1,4 @@
-import "./modules/test";
-import "./modules/cookies";
-import "./modules/remove-unwanted-characters";
+import "./modules/faq-accordion";
+import "./modules/timeline";
+import "./modules/course-java-sliders";
+
