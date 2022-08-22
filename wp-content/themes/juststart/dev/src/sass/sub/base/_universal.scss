@@ -51,9 +51,66 @@ p {
   font-weight: 700;
 }
 
+.coders-input {
+  background: transparent;
+  border-radius: 8px;
+  padding: 16px 14px;
+  min-width: 363px;
+  border: 1px solid $text-color;
+  outline: none;
+  width: 100%;
+  transition: all .3s ease-out;
+  max-width: 690px;
+  &::placeholder {
+    color: $text-color;
+    transition: all .3s ease-out;
+  };
+  &:focus, &:focus-visible{
+    border: 1px solid $main-color;
+    transition: all .3s ease-out;
+    &::placeholder{
+      color: transparent;
+      transition: all .3s ease-out;
+    }
+  }
+}
+
+.wpcf7-list-item {
+  margin-left: 0;
+}
+
+input[type="file"].coders-input {
+  text-indent: -999em;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  padding: 14px 14px;
+  position: relative;
+  &::before {
+    content: "Dodaj CV";
+    position: absolute;
+    color: $text-color;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 14px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+input[type='checkbox']{
+  width: 19px;
+  height: 19px;
+  outline: none;
+  border: 1px solid $text-color;
+  border-radius: 5px;
+  margin-right: 9px;
+  transform: translateY(3px);
+}
+
 .page-header {
   position: relative;
-  &.wrapper{
+  &.wrapper {
     margin: 0;
   }
   &__img-wrapper {
@@ -75,14 +132,14 @@ p {
     margin: 0;
     font-weight: 700;
   }
-  @include media("lg"){
+  @include media("lg") {
     &__heading {
       font-size: 2.4rem;
       line-height: 48px;
     }
   }
   @include media("xl") {
-    &.wrapper{
+    &.wrapper {
       margin: 0 45px;
     }
     &__heading {

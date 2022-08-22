@@ -1,0 +1,218 @@
+.work {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  &.wrapper {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  &__sidebar {
+    display: none;
+  }
+  &__offer {
+    scroll-margin-top: 100px;
+    margin-bottom: 40px;
+  }
+  &__list {
+    padding-left: 0;
+    color: #151542;
+    font-size: 1rem;
+    line-height: 30px;
+    font-weight: 500;
+    max-width: 880px;
+  }
+  &__element {
+    @extend .java-learning__list-item;
+    margin-bottom: 30px;
+    &:before {
+      background: $main-color;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  &__form {
+    scroll-margin-top: 100px;
+    & p {
+      margin-bottom: 22px;
+    }
+    &-header {
+      line-height: 3rem;
+    }
+  }
+  span[data-name="file-513"] {
+    display: block;
+    margin-bottom: 40px;
+  }
+  &__recr {
+    scroll-margin-top: 100px;
+  }
+  &__recr-steps {
+    margin-bottom: 40px;
+    position: relative;
+    &:after {
+      position: absolute;
+      content: "";
+      right: 0;
+      top: 220px;
+      width: 229px;
+      height: 187px;
+      background: url("../img/offer-decorator.svg") no-repeat;
+    }
+  }
+  &__recr-step {
+    width: 100%;
+    background: rgba(80, 46, 121, 0.15);
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    margin-bottom: 19px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    &-number {
+      font-size: 7.5rem;
+      line-height: 164px;
+      color: $secondary-color;
+      font-weight: 700;
+      display: none;
+      &--mobile {
+        font-size: 7.5rem;
+        line-height: 164px;
+        color: $secondary-color;
+        font-weight: 700;
+        padding-right: 20px;
+      }
+    }
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &-header {
+      font-weight: 700;
+      color: $main-color;
+      text-transform: uppercase;
+      font-size: 1.25rem;
+      line-height: 27px;
+      display: flex;
+      align-items: center;
+    }
+    &-text {
+      margin-top: 13px;
+      max-width: 512px;
+      line-height: 38px;
+      padding-bottom: 60px;
+    }
+  }
+  @include media("lg") {
+    margin-top: 66px;
+    margin-bottom: 66px;
+    &__offer {
+      margin-bottom: 66px;
+    }
+
+    &__recr-header {
+      position: relative;
+      &:after {
+        position: absolute;
+        content: "";
+        left: 820px;
+        top: -15px;
+        background: transparent;
+        width: 60px;
+        height: 60px;
+        border: 1px solid $main-color;
+      }
+    }
+    &__recr-steps {
+      margin-bottom: 66px;
+    }
+    &__form {
+      &-header {
+        line-height: 4.125rem;
+      }
+    }
+    &__recr-step {
+      &-number {
+        display: block;
+        &--mobile {
+          display: none;
+        }
+      }
+      &-content {
+        margin-left: 30px;
+      }
+      &-text {
+        margin-top: 13px;
+        padding-bottom: 0;
+      }
+    }
+  }
+  @include media("xl") {
+    &.wrapper {
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 45px;
+      padding-right: 45px;
+      width: calc(100vw - 90px);
+    }
+    margin-top: 86px;
+    margin-bottom: 86px;
+    &__offer {
+      margin-bottom: 86px;
+    }
+    &__recr-steps {
+      margin-bottom: 86px;
+    }
+    &.container {
+      padding: 0;
+    }
+    display: flex;
+    &__sidebar {
+      display: block;
+      position: sticky;
+      top: 0;
+      left: 0;
+      ul {
+        padding-left: 0;
+      }
+      .menu-item-object-custom {
+        color: $secondary-color;
+        &.active {
+          background: $main-color;
+          color: white;
+        }
+      }
+      a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        font-weight: 700;
+        padding-left: 23px;
+      }
+    }
+  }
+  &__form {
+    position: relative;
+    &:after {
+      position: absolute;
+      content: "";
+      right: 120px;
+      top: -30px;
+      width: 187px;
+      height: 228px;
+      background: url("../img/work-form-decorator.svg") no-repeat;
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      right: 0;
+      bottom: 180px;
+      width: 60px;
+      height: 60px;
+      background: $main-color;
+      border: none;
+    }
+  }
+}

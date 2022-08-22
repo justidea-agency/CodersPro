@@ -60,6 +60,7 @@ function custom_new_menu() {
   register_nav_menu('main-menu',__( 'Main Menu' ));
   register_nav_menu('footer-menu',__( 'Footer Menu' ));
   register_nav_menu('courses-java-sidebar',__( 'Sidebar' ));
+	register_nav_menu('work-with-us-sidebar',__( 'Work With Us Menu' ));
 }
 add_action( 'init', 'custom_new_menu' );
 

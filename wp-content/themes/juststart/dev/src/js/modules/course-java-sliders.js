@@ -1,11 +1,12 @@
-const swiper = new Swiper('.swiper', {
-  direction: 'horizontal', 
-  loop: true,
-  slidePerView: 1,
-  pagination: {
-    el: '.swiper-pagination',
-  },
-})
+const swiperEl = document.querySelector('.swiper');
 
-
-console.log('swiper initializated pagg');
+if (swiperEl) {
+  const swiper = new Swiper('.swiper', {
+    direction: 'horizontal',
+    loop: true,
+    slidePerView: 1,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  })
+}
