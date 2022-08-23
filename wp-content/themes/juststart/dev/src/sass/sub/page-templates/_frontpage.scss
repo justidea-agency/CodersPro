@@ -613,8 +613,8 @@
       max-width: 760px;
     }
   }
-  @include media('xxl'){
-    &.wrapper{
+  @include media("xxl") {
+    &.wrapper {
       margin-left: 45px;
       margin-right: 45px;
     }
@@ -713,4 +713,14 @@
       }
     }
   }
+}
+#kim-jestesmy,
+#kursy-java,
+#co-nas-wyroznia,
+#praca-po-kursie {
+  scroll-margin-top: 100px;
+}
+
+#finansowanie {
+  scroll-margin-top: 140px;
 }

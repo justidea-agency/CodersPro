@@ -57,6 +57,7 @@
       width: 229px;
       height: 187px;
       background: url("../img/offer-decorator.svg") no-repeat;
+      display: none;
     }
   }
   &__recr-step {
@@ -127,6 +128,9 @@
     }
     &__recr-steps {
       margin-bottom: 66px;
+      &:after {
+        display:block;
+      }
     }
     &__form {
       &-header {

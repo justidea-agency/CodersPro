@@ -1,7 +1,25 @@
 header.header-burger {
   display: block;
+  position: fixed;
+  position: sticky;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  background: $white;
   padding-top: 51px;
   padding-bottom: 21px;
+  &.wrapper {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @include media("lg") {
+    &.wrapper {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+  }
   @include media("xl") {
     display: none;
   }
@@ -131,15 +149,26 @@ header.header-burger {
     right: 0;
     background: $white;
     display: block;
-    z-index:999;
+    z-index: 999;
     margin: 0;
-    padding: 0 45px;
     &__logo {
       width: 160px;
       height: auto;
     }
   }
+  @include media("xl") {
+    padding: 0 30px;
+    &__logo {
+      width: 130px;
+    }
+  }
   @include media("xxl") {
+    padding: 0 45px;
+    &__logo {
+      width: 170px;
+    }
+  }
+  @include media("xxxl") {
     &__logo {
       width: auto;
     }
@@ -178,10 +207,24 @@ header.header-burger {
     color: $main-color;
     transition: 0.35s ease-out;
   }
+  @include media("xl") {
+    margin-right: 30px;
+    font-size: 1rem;
+    &#menu-item-20 {
+      margin-right: 30px;
+    }
+  }
   @include media("xxl") {
+    margin-right: 35px;
+    font-size: 1.25rem;
+    &#menu-item-20 {
+      margin-right: 40px;
+    }
+  }
+  @include media("xxxl") {
     margin-right: 40px;
     &#menu-item-20 {
-      margin-right: 110px;
+      margin-right: 80px;
     }
   }
 }

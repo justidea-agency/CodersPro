@@ -22,7 +22,7 @@ $hero_text = get_field('text_hero');
     <div class="hero__overlay"></div>
   </section>
 
-  <section class="home-about wrapper container">
+  <section class="home-about wrapper container" id="kim-jestesmy">
     <?php
     $home_about_header = get_field('home_about_header');
     $text_1 = get_field('text_1');
@@ -47,7 +47,7 @@ $hero_text = get_field('text_hero');
 
   </section>
 
-  <section class="home-courses wrapper container">
+  <section class="home-courses wrapper container" id="kursy-java">
     <?php
     $text_java_course = get_field('text_java_course');
     $btn_text_java_course = get_field('btn_text_java_course');
@@ -96,7 +96,7 @@ $hero_text = get_field('text_hero');
     </div>
   </section>
 
-  <section class="home-benefits container wrapper">
+  <section class="home-benefits container wrapper" id="co-nas-wyroznia">
     <?php
     $section_under_courses_header = get_field('section_under_courses_header');
     $section_under_courses_text = get_field('section_under_courses_text');
@@ -117,7 +117,7 @@ $hero_text = get_field('text_hero');
     </div>
   </section>
 
-  <section class="home-work container wrapper">
+  <section class="home-work container wrapper" id="praca-po-kursie">
     <?php
     $section_work_header = get_field('section_under_courses_2_header');
     $section_work_text = get_field('section_under_courses_2_text');
@@ -140,7 +140,7 @@ $hero_text = get_field('text_hero');
     </div>
   </section>
 
-  <section class="home-finances wrapper">
+  <section class="home-finances wrapper" id="finansowanie">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/finances/finances-decorator-1.svg" alt="Decorative Image" class="home-finances__decorator dec-1">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/finances/finances-decorator-2.svg" alt="Decorative Image" class="home-finances__decorator dec-2">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/finances/finances-decorator-3.svg" alt="Decorative Image" class="home-finances__decorator dec-3">

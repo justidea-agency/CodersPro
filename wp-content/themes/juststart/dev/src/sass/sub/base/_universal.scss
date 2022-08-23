@@ -140,13 +140,18 @@ input[type='checkbox']{
   }
   @include media("xl") {
     &.wrapper {
-      margin: 0 45px;
+      margin: 0 30px;
     }
     &__heading {
       color: $white;
       font-size: 3.125rem;
       line-height: 96px;
       font-weight: 700;
+    }
+  }
+  @include media("xxl") {
+    &.wrapper {
+      margin: 0 45px;
     }
   }
 }
