@@ -138,9 +138,6 @@
     <?php endif; ?>
 
 
-
-
-
     <?php if (have_rows('learning_section')) : ?>
       <?php while (have_rows('learning_section')) :
         the_row(); ?>

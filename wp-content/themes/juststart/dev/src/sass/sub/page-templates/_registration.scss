@@ -1,0 +1,219 @@
+.registration {
+  margin-top: 60px;
+  margin-bottom: 100px;
+  position: relative;
+  .activenow-form-container {
+    position: relative;
+  }
+  &.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__header {
+    color: $secondary-color;
+    text-align: center;
+  }
+  @include media("md") {
+    margin-top: 80px;
+    margin-bottom: 120px;
+  }
+  @include media("lg") {
+    margin-top: 100px;
+    margin-bottom: 150px;
+    &-right-decorator{
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 1px solid $main-color;
+      background: transparent;
+      right: 40px;
+      top: 80px;
+    }
+    &-left-decorator{
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: $main-color;
+      bottom: 240px;
+      left: 40px;
+    }
+  }
+  @include media("xl") {
+    &__header {
+      font-size: 3.125rem;
+    }
+    &-right-decorator{
+      right: 150px;
+    }
+    &-left-decorator{
+      left: 150px;
+    }
+    .activenow-form-container {
+      max-width: 550px;
+      &:before {
+        content: "";
+        position: absolute;
+        background: url("../img/registration-decorator-1.svg");
+        background-repeat: no-repeat;
+        top: -30px;
+        left: -300px;
+        transform: scale(0.8);
+        width: 187px;
+        height: 229px;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        background: url("../img/registration-decorator-2.svg");
+        transform: scale(0.8);
+        background-repeat: no-repeat;
+        top: 140px;
+        right: -300px;
+        width: 229px;
+        height: 187px;
+      }
+    }
+  }
+
+  @include media("xxl") {
+    margin-top: 140px;
+    margin-bottom: 200px;
+    .activenow-form-container {
+      max-width: 690px;
+      &:before {
+        transform: none;
+      }
+      &:after {
+        transform: none;
+      }
+    }
+  }
+}
+.activenow-form-container {
+  max-width: 690px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.activenow-main-selector {
+  @extend .coders-input;
+}
+
+#client_first_name {
+  @extend .coders-input;
+}
+
+#client_last_name {
+  @extend .coders-input;
+}
+
+#client_birthdate {
+  @extend .coders-input;
+}
+
+#client_email {
+  @extend .coders-input;
+  min-width: 0 !important;
+}
+
+#client_phone {
+  @extend .coders-input;
+  min-width: 0 !important;
+}
+
+#eventable_id {
+  @extend .coders-input;
+  min-width: 0 !important;
+}
+.activenow-class-title {
+  font-family: "Monrope", sans-serif;
+  font-weight: 700;
+  color: $main-color;
+}
+
+.activenow-form-class-description {
+  font-family: "Monrope", sans-serif !important;
+  color: $text-color !important;
+}
+
+.activenow-class-value {
+  color: $text-color;
+  font-weight: 400;
+}
+
+.activenow-form-container .activenow-form-class-description {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+#active-now-submit {
+  @extend .primary-btn;
+  color: $white !important;
+  max-width: none;
+  width: max-content;
+  padding: 1.125rem 2.375rem !important;
+  border-radius: 0.8125rem !important;
+  margin-top: 40px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+input[placeholder="PESEL *"] {
+  @extend .coders-input;
+  min-width: 0 !important;
+  margin-bottom: 30px !important;
+  @include media("lg") {
+    margin-bottom: 42px !important;
+  }
+}
+
+input[type="date"] {
+  max-height: 50.55px;
+  min-width: 0 !important;
+}
+
+.activenow-form-field:not(.activenow-required-field) {
+  margin-top: 10px !important;
+  @include media("lg") {
+    margin-top: 10px !important;
+  }
+}
+
+.activenow-form-field {
+  display: flex !important;
+  align-items: center !important;
+  input[type="checkbox"] {
+    width: 19px !important;
+    height: 19px !important;
+    min-width: 19px !important;
+    min-height: 19px !important;
+    outline: none !important;
+    border: 1px solid $text-color !important;
+    border-radius: 5px !important;
+    margin-right: 9px !important;
+    transform: translateY(3px) !important;
+    outline: none !important;
+  }
+}
+
+.activenow-form-container .activenow-form-field label {
+  align-self: center !important;
+}
+
+.btn-primary {
+  @extend .primary-btn;
+  max-width: none;
+  width: max-content;
+}
+
+.registration input[type="text"] {
+  @extend .coders-input;
+  min-width: 0 !important;
+  padding: 16px 14px !important;
+  border-radius: 8px !important;
+  border: 1px solid $text-color !important;
+  &:focus,
+  &:focus-within {
+    border: 1px solid $main-color !important;
+  }
+}

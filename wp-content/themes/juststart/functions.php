@@ -8,6 +8,14 @@ function justidea_files()
 	wp_enqueue_style('customs', get_theme_file_uri('/assets/css/custom.css'));
 	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap', false);
 
+
+	wp_enqueue_style('mailchimp-popup-basic-styles', '//cdn-images.mailchimp.com/embedcode/classic-071822.css', false);
+
+	wp_enqueue_script('mailchimp-integration', 	"https://chimpstatic.com/mcjs-connected/js/users/0059ea58e7ce77f971b62de73/12d24091e2085c706353d9c6c.js", false);
+
+
+
+	// only java-courses page
 	if (is_page(1444)) {
 		wp_enqueue_script('swiperjs', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', false);
 		wp_enqueue_style('swiperstyles', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css', false);
@@ -16,6 +24,12 @@ function justidea_files()
 	if (is_front_page()) {
 		wp_enqueue_script('lottie-player', 'https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js', false);
 	};
+
+	//only registration page
+	if (is_page(21)) {
+		wp_enqueue_script('activenow', 'https://app.activenow.io/external/signup_form/load_by_js?city_id=&code=xyQzSP5iaXQWStEw&instructor_id=&proficiency_id=&school_id=7272&signup_form_id=42982&venue_id=&zz=', false);
+	};
+
 	// Creating a variable in html file and nounce for secure log - rootData.root_url
 	wp_localize_script('justIdea', 'rootData', array(
 		'root_url' => get_site_url(),
@@ -23,7 +37,6 @@ function justidea_files()
 	));
 }
 add_action('wp_enqueue_scripts', 'justidea_files');
-
 
 if (function_exists('acf_add_options_page')) {
 	acf_add_options_page(array(

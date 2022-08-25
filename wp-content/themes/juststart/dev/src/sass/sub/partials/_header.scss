@@ -4,7 +4,7 @@ header.header-burger {
   position: sticky;
   top: 0;
   right: 0;
-  z-index: 9999;
+  z-index: 995;
   background: $white;
   padding-top: 51px;
   padding-bottom: 21px;
@@ -200,7 +200,8 @@ header.header-burger {
   &:last-of-type {
     margin-right: 0;
   }
-  &#menu-item-20 {
+  &#menu-item-2902 {
+    cursor: pointer;
     margin-right: 50px;
   }
   &:hover {
@@ -210,20 +211,20 @@ header.header-burger {
   @include media("xl") {
     margin-right: 30px;
     font-size: 1rem;
-    &#menu-item-20 {
+    &#menu-item-2902 {
       margin-right: 30px;
     }
   }
   @include media("xxl") {
     margin-right: 35px;
     font-size: 1.25rem;
-    &#menu-item-20 {
+    &#menu-item-2902 {
       margin-right: 40px;
     }
   }
   @include media("xxxl") {
     margin-right: 40px;
-    &#menu-item-20 {
+    &#menu-item-2902 {
       margin-right: 80px;
     }
   }
@@ -259,6 +260,6 @@ header.header-burger {
   margin: 0 auto;
 }
 
-#menu-main-menu-1 li.menu-item-20 {
+#menu-main-menu-1 li.menu-item-2902 {
   margin-bottom: 80px;
 }

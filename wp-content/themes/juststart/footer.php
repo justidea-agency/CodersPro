@@ -57,7 +57,7 @@ $phone = get_field('Phone', 'options');
 			<div class="footer__regulations-decorator"></div>
 		</div>
 	</div>
-	
+
 	<div class="footer__justidea-wrapper wrapper">
 		<div class="footer__copyrights">
 			Copyright @ Coderspro <?php echo date("Y") ?>
@@ -78,6 +78,10 @@ $phone = get_field('Phone', 'options');
 	</div>
 </footer>
 
+
+<?php
+include(locate_template("components/newsletter-popup.php", false, false));
+?>
 <?php wp_footer(); ?>
 
 </body>

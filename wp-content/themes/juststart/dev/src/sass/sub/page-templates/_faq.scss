@@ -13,13 +13,47 @@
     text-align: center;
     margin-bottom: 21px;
   }
+  &-element__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__plus-minus-toggle {
+    cursor: pointer;
+    height: 19px;
+    position: relative;
+    width: 19px;
+    &:before,
+    &:after {
+      background: $main-color;
+      content: "";
+      height: 3px;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      width: 19px;
+      transform: translateY(-50%);
+      transition: transform 500ms ease;
+    }
+    &:after {
+      transform-origin: center;
+    }
+    &.collapsed {
+      &:after {
+        transform: translateY(-50%) rotate(90deg);
+      }
+      &:before {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
   @include media("lg") {
-    &-list:after{
+    &-list:after {
       position: absolute;
       top: -250px;
       right: 0;
-      content: '';
-      background: url('../img/about-pink-decorator.svg');
+      content: "";
+      background: url("../img/about-pink-decorator.svg");
       width: 187px;
       height: 229px;
     }
@@ -40,7 +74,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
-  &__btn{
+  &__btn {
     width: 33px;
     height: 33px;
     border: 2px solid $main-color;
@@ -62,7 +96,8 @@
     visibility: hidden;
     opacity: 0;
     color: $text-color;
-    transition: max-height .3s ease-out, opacity .3s ease-out, visibility .3s ease-out, margin .15s ease-out;
+    transition: max-height 0.3s ease, opacity 0.3s ease,
+      visibility 0.3s ease, margin 0.3s ease;
   }
   @include media("md") {
     padding: 30px 38px;
@@ -77,11 +112,12 @@
   }
 }
 
-.faq-element.open{
-  .faq-element__answer{
+.faq-element.open {
+  .faq-element__answer {
     max-height: 600px;
     margin-top: 20px;
-    transition: max-height .35s ease-out, opacity .3s ease-out, visibility .3s ease-out, margin .15s ease-out;
+    transition: max-height 0.35s ease, opacity 0.3s ease,
+      visibility 0.3s ease, margin 0.3s ease;
     opacity: 1;
     visibility: visible;
   }

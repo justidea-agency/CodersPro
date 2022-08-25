@@ -37,13 +37,15 @@
               </span>
             <?php endif; ?>
           </div>
-          <div class="faq-element__btn"></div>
+          <div class="faq-element__btn">
+            <div class="faq__plus-minus-toggle collapsed"></div>
+          </div>
         </li>
       <?php endwhile; ?>
     </ul>
   <?php endif; ?>
 </main>
-<?php 
-  include(locate_template("components/informator-section.php", false, false));
+<?php
+include(locate_template("components/informator-section.php", false, false));
 ?>
 <?php get_footer(); ?>

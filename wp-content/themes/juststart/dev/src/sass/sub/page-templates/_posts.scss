@@ -40,6 +40,49 @@
     max-width: none;
     padding: 1.22rem 2.375rem;
   }
+  &__pagination-container {
+    margin-top: 60px;
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 130px;
+  }
+  .page-numbers {
+    font-weight: 500;
+    margin-right: 8px;
+    color: $text-color;
+    &.current {
+      margin-right: 8px;
+      color: $main-color;
+    }
+    &.next {
+      position: relative;
+      &:after {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -25px;
+        content: "";
+        height: 13px;
+        width: 16px;
+        background: url("../img/pagination-arrow.svg");
+      }
+    }
+    &.prev {
+      position: relative;
+      &:after {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) rotate(180deg);
+        left: -25px;
+        content: "";
+        height: 13px;
+        width: 16px;
+        background: url("../img/pagination-arrow.svg");
+      }
+    }
+  }
   @include media("md") {
     display: flex;
     flex-wrap: wrap;
@@ -75,6 +118,9 @@
     &__post {
       margin-bottom: 75px;
     }
+    &__pagination-container {
+      margin-bottom: 0;
+    }
   }
   @include media("xl") {
     margin-bottom: 150px;
@@ -107,7 +153,7 @@
         padding-right: 15px;
         padding-left: 15px;
       }
-      &:last-of-type{
+      &:last-of-type {
         margin-bottom: 75px;
       }
     }
@@ -117,5 +163,30 @@
   @include media("xxxl") {
     margin-top: 100px;
     margin-bottom: 200px;
+    &__post {
+      padding-right: 15px;
+      &-background {
+        height: 380px;
+      }
+      &:nth-of-type(2) {
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+      &:nth-of-type(2n) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      &:nth-of-type(3n) {
+        padding-right: 0px;
+        padding-left: 20px;
+      }
+      &:nth-of-type(2n + 3) {
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+      &:last-of-type {
+        margin-bottom: 75px;
+      }
+    }
   }
 }

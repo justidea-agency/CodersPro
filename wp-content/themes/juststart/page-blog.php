@@ -18,10 +18,11 @@
 <section class="posts container wrapper">
 
   <?php
-  $currentPage = get_query_var('paged');
+  $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
   $posts = new WP_Query(array(
     'post_type' => 'blog',
     'posts_per_page' => 9,
+    'paged' => $currentPage
   ));
   ?>
   <?php while ($posts->have_posts()) : $posts->the_post(); ?>
@@ -46,10 +47,22 @@
       </div>
       <a href="<?php the_permalink(); ?>" class="primary-btn posts__btn">Zobacz więcej</a>
     </article>
-  <?php endwhile;
-  wp_reset_query(); ?>
 
-
+  <?php endwhile; ?>
+  <?php wp_reset_query(); ?>
+  <div class="posts__pagination-container">
+    <div class="posts__pagination">
+      <?php echo paginate_links(array(
+        'total' => $posts->max_num_pages,
+        'next_text' => "Następna strona",
+        'prev_text' => "Poprzednia strona"
+      )); ?>
+    </div>
+  </div>
 </section>
 
+
+<?php
+include(locate_template("components/informator-section.php", false, false));
+?>
 <?php get_footer(); ?>
