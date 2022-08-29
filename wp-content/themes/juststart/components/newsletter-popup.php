@@ -32,7 +32,7 @@
 
         <div class="mc-field-group checkbox">
           <input type="checkbox" required id="privacy" name="privacy">
-          <label for="privacy">Zapoznałem się i akcpetuję <a href="/coders-pro/privacy-policy">poltykę prywatności</a>.
+          <label for="privacy">Zapoznałem się i akcpetuję <a href="/coders-pro/privacy-policy.pdf">poltykę prywatności</a>.
             </label>
         </div>
 
