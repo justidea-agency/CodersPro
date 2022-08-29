@@ -56,7 +56,7 @@ $hero_text = get_field('text_hero');
     <h3 class="home-courses__header secondary-header">Kurs Java</h3>
     <div class="home-courses__content">
       <p class="home-courses__text primary__text col-lg-8"><?php echo esc_html($text_java_course); ?></p>
-      <button class="home-courses__btn primary-btn"><?php echo esc_html($btn_text_java_course); ?></button>
+      <a href="<?php echo get_page_link(1444); ?>" class="home-courses__btn primary-btn"><?php echo esc_html($btn_text_java_course); ?></a>
     </div>
 
     <div class="home-courses__table">

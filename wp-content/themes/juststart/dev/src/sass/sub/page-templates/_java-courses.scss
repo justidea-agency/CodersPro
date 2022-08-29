@@ -1,3 +1,12 @@
+#learning,
+#bonuses,
+#why-java,
+#mentors,
+#graduates,
+#payments {
+  scroll-margin-top: 120px;
+}
+
 .java {
   &-header {
     & h1 {
@@ -92,7 +101,7 @@
       font-size: 7.5rem;
     }
     &__title {
-      font-size: 1.875rem;
+      font-size: 1.775rem;
       line-height: 40px;
     }
     &__subtitle {
@@ -112,18 +121,26 @@
     height: calc(100% - 5.625rem);
     width: 0.1875rem;
     background: linear-gradient(180deg, #502e79 0%, #be4073 100%);
+    z-index: -2;
   }
   @include media("md") {
-    height: calc(100% - 5rem);
     &:before {
-      top: 0;
+      top: 30px;
       left: 42px;
     }
   }
   @include media("lg") {
+    &.collapsed {
+      &:before {
+        height: calc(100% + 25px);
+        transition: all 0.3s ease;
+      }
+    }
     &:before {
       left: 50%;
-      transform: translate(-50%, 5.5rem);
+      height: calc(100% - 4rem);
+      transform: translate(-50%, 3.4rem);
+      transition: all 0.3s ease;
     }
   }
 }
@@ -139,6 +156,7 @@
   margin-bottom: 5.4375rem;
   position: relative;
   max-height: 25rem;
+  transform: max-height 0.3s ease;
   &.hidden {
     max-height: 0;
     visibility: hidden;
@@ -146,6 +164,7 @@
     margin-bottom: 0;
     padding-top: 0;
     padding-bottom: 0;
+    transform: max-height 0.3s ease;
   }
   &:after {
     content: "";
@@ -243,6 +262,8 @@
 
 .timeline__btn {
   margin: 0 auto;
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
 }
 
 .timeline-courses__table {
@@ -255,10 +276,15 @@
   margin-right: auto;
   padding-left: 0;
   padding-right: 0;
+  @include media("xl") {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .sidebar-nav {
   display: none;
+  padding-top: 19px;
   ul {
     padding-left: 0;
   }
@@ -278,6 +304,11 @@
   }
   @include media("xl") {
     display: block;
+    padding-right: 20px;
+    position: fixed;
+    position: sticky;
+    top: 150px;
+    left: 20px;
   }
 }
 
@@ -303,8 +334,8 @@
     display: flex;
   }
 
-  @include media("xxxl"){
-    &:after{
+  @include media("xxxl") {
+    &:after {
       top: -40px;
       right: -80px;
     }
@@ -463,5 +494,181 @@
     margin-top: 87px;
     margin-bottom: 30px;
   }
- 
+  @include media("xl") {
+    &__header {
+      margin-bottom: 50px;
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.course-include {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 107px;
+  &__header {
+    @extend .mentors-slider__header;
+  }
+  &__element {
+    background: #f3ebf4;
+    padding: 0 9px;
+    padding-bottom: 9px;
+    min-height: 160px;
+    margin-bottom: 25px;
+    &-header {
+      font-size: 20px;
+      line-height: 38px;
+      font-weight: 700;
+      color: $secondary-color;
+      padding-top: 6px;
+      margin-bottom: 8px;
+    }
+    &:nth-of-type(2n) {
+      background: #f5e3ea;
+    }
+    &:last-of-type {
+      margin-bottom: 0px;
+    }
+  }
+  @include media("sm") {
+    &__element {
+      padding: 0 15px;
+      padding-bottom: 15px;
+      &-header {
+        padding-top: 10px;
+      }
+    }
+  }
+  @include media("md") {
+    &__element {
+      padding: 0 18px;
+      &-header {
+        padding-top: 12px;
+      }
+    }
+  }
+  @include media("lg") {
+    &__list {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        right: 0px;
+        top: -160px;
+        width: 187px;
+        height: 228px;
+        background: url("../img/work-form-decorator.svg") no-repeat;
+        transform: rotate(180deg);
+        z-index: -2;
+      }
+    }
+
+    &__element {
+      display: flex;
+      align-items: center;
+      min-height: none;
+      padding: 0 30px;
+      &-header {
+        margin: 0;
+        padding: 0;
+      }
+      &-text {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+  @include media("xl") {
+  }
+  @include media("xxl") {
+    &__list {
+      &:after {
+        right: -20px;
+      }
+    }
+  }
+}
+
+.graduates-slider {
+  @extend .mentors-slider;
+  &__header {
+    @extend .mentors-slider__header;
+  }
+}
+
+.java-payments {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 120px;
+  &__header {
+    @extend .mentors-slider__header;
+  }
+  .payment {
+    &__container {
+      background: rgba(130, 52, 146, 0.1);
+      padding: 21px 15px 40px 15px;
+    }
+    &__amount {
+      font-weight: 700;
+      color: $main-color;
+      line-height: 66px;
+      font-size: 3.75rem;
+      margin-bottom: 22px;
+    }
+    &__list {
+      @extend .java-learning__list;
+      margin-bottom: 0;
+    }
+    &__item {
+      @extend .java-learning__list-item;
+      &:before {
+        background: $main-color;
+      }
+    }
+  }
+  @include media("lg") {
+    .payment {
+      &__container {
+        display: flex;
+        align-items: center;
+        padding: 37px 25px 37px 25px;
+      }
+      &__amount {
+        margin-bottom: 0;
+      }
+      &__item {
+        margin-bottom: 12px;
+      }
+      &__list {
+        margin-left: 0;
+        margin-top: 0;
+      }
+    }
+  }
+  @include media("xl") {
+    margin-bottom: 138px;
+    .payment {
+      &__container {
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          right: 20px;
+          width: 60px;
+          height: 60px;
+          border: 1px solid $main-color;
+          top: 20px;
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          right: 140px;
+          top: -170px;
+          width: 187px;
+          height: 228px;
+          background: url("../img/courses-payment-decorator.svg") no-repeat;
+        }
+      }
+    }
+  }
 }

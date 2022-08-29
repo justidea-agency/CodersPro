@@ -1,4 +1,4 @@
-<div class="popup opened">
+<div class="popup">
   <div id="mc_embed_signup">
     <form action="https://coderspro.us10.list-manage.com/subscribe/post?u=0059ea58e7ce77f971b62de73&amp;id=61d9199c16&amp;f_id=00af32e2f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
       <div id="mc_embed_signup_scroll">
@@ -32,7 +32,7 @@
 
         <div class="mc-field-group checkbox">
           <input type="checkbox" required id="privacy" name="privacy">
-          <label for="privacy">Zapoznałem się i akcpetuję <a href="#">poltykę prywatności</a>.
+          <label for="privacy">Zapoznałem się i akcpetuję <a href="/coders-pro/privacy-policy">poltykę prywatności</a>.
             </label>
         </div>
 

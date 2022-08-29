@@ -1,6 +1,21 @@
 .slider {
   width: 100%;
   background: transparent;
+  @include media('md'){
+    .swiper-wrapper{
+      padding-bottom: 30px;
+    }
+  }
+  @include media('lg'){
+    .swiper-wrapper{
+      padding-bottom: 50px;
+    }
+  }
+  @include media('xl'){
+    .swiper-wrapper{
+      padding-bottom: 65px;
+    }
+  }
 }
 .swiper-wrapper {
   padding-bottom: 1.25rem;
@@ -22,11 +37,10 @@
   flex-wrap: wrap;
   &__picture {
     width: 33.33%;
-    height: auto;
     position: relative;
     max-width: 13.125rem;
     min-width: 7rem;
-    height: auto;
+    height: min-content;
     &:after {
       content: "";
       position: absolute;

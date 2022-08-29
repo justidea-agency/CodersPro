@@ -19,7 +19,6 @@
     </span>
   </div>
 
-
   <div class="course__data">
     <span class="course__data-label">Czas trwania</span>
     <span class="course__data-content">
@@ -37,6 +36,12 @@
       ?>
     </span>
   </div>
+  <?php if ($args['popup_button']) { ?>
+    <div class="course__data course-btn__container">
+
+      <button class="course__btn">Więcej o kursie</button>
+    </div>
+  <?php } ?>
   <?php
   if ($args['regular_price']) { ?>
     <span class="course__promotion-label">PROMOCJA</span>

@@ -129,7 +129,7 @@
     &__recr-steps {
       margin-bottom: 66px;
       &:after {
-        display:block;
+        display: block;
       }
     }
     &__form {
@@ -154,6 +154,9 @@
     }
   }
   @include media("xl") {
+    margin-top: 86px;
+    margin-bottom: 86px;
+    display: flex;
     &.wrapper {
       margin-left: auto;
       margin-right: auto;
@@ -161,8 +164,6 @@
       padding-right: 45px;
       width: calc(100vw - 90px);
     }
-    margin-top: 86px;
-    margin-bottom: 86px;
     &__offer {
       margin-bottom: 86px;
     }
@@ -172,7 +173,13 @@
     &.container {
       padding: 0;
     }
-    display: flex;
+    & .menu-work-with-us-sidebar-menu-container {
+      position: fixed;
+      position: sticky;
+      top: 150px;
+      left: 20px;
+      padding-right:20px;
+    }
     &__sidebar {
       display: block;
       position: sticky;

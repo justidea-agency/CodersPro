@@ -22,7 +22,7 @@
   <?php if ($subtitle = get_field('subtitle')) : ?>
     <p class="primary__text java-info__text"><?php echo esc_html($subtitle); ?></p>
   <?php endif; ?>
-  <a href="" class="java-info__btn primary-btn">Pobierz informator</a>
+  <a href="/coders-pro/informator.pdf" class="java-info__btn primary-btn">Pobierz informator</a>
 </section>
 
 <section class="java-timeline container">
@@ -62,7 +62,7 @@
     </div>
   <?php endif; ?>
 
-  <button class="timeline__btn primary-btn">Rozwiń</button>
+  <button class="primary-btn timeline__btn">Rozwiń</button>
 
   <div class="timeline-courses__table">
     <?php
@@ -91,6 +91,7 @@
         'duration' => $duration,
         'price' => $price,
         'regular_price' => $regular_price,
+        'popup_button' => true
       );
 
       include(locate_template("components/course.php", false, false));
@@ -102,17 +103,15 @@
 </section>
 
 <section class="java-benefits container">
+  <sidebar class="sidebar-nav col-xl-3">
+    <?php wp_nav_menu(array(
+      'theme_location' => 'courses-java-sidebar',
+      'add_li_class' => 'sidebar-nav__item'
+    )); ?>
+  </sidebar>
 
-  <article class="java-why" id="why-java">
-    <sidebar class="sidebar-nav col-xl-3">
-      <?php wp_nav_menu(array(
-        'theme_location' => 'courses-java-sidebar',
-        'add_li_class' => 'sidebar-nav__item'
-      )); ?>
-    </sidebar>
-
-    <div class="java-why__content col-xl-9">
-
+  <article class="java-why col-xl-9" id="why-java">
+    <div class="java-why__content">
       <?php if ($why_java_header = get_field('why_java_header')) : ?>
         <h2 class="java-why__header secondary-header"> <?php echo esc_html($why_java_header); ?></h2>
       <?php endif; ?>
@@ -129,7 +128,7 @@
   </article>
 
 
-  <article class="java-learning col-xl-9 offset-xl-3">
+  <article class="java-learning col-xl-9 offset-xl-3" id="learning">
     <?php if ($learning_header = get_field('learning_header')) : ?>
       <h3 class="java-learning__header secondary-header">
         <?php echo esc_html($learning_header); ?>
@@ -141,7 +140,7 @@
     <?php if (have_rows('learning_section')) : ?>
       <?php while (have_rows('learning_section')) :
         the_row(); ?>
-        <div class="java-learning__tile" id="learning">
+        <div class="java-learning__tile">
 
           <?php
           $logo = get_sub_field('logo');
@@ -163,7 +162,9 @@
     <?php endif; ?>
   </article>
 
-  <article class="mentors-slider col-xl-9 offset-xl-3">
+
+
+  <article class="mentors-slider col-xl-9 offset-xl-3" id="mentors">
     <h2 class="mentors-slider__header">Kim są nasi mentorzy</h2>
     <section class="slider swiper">
       <div class="slider__slides swiper-wrapper">
@@ -194,6 +195,7 @@
 
           include(locate_template("components/each-slide-template.php", false, false));
         endwhile;
+        wp_reset_postdata();
         ?>
 
       </div>
@@ -201,6 +203,111 @@
       </div>
     </section>
   </article>
+
+
+
+  <article class="course-include col-xl-9 offset-xl-3" id="bonuses">
+
+    <h2 class="course-include__header">Co otrzymasz?</h2>
+
+    <?php if (have_rows('what_you_get_tile')) : ?>
+      <div class="course-include__list">
+        <?php while (have_rows('what_you_get_tile')) :
+          the_row(); ?>
+          <div class="course-include__element">
+            <?php if ($name = get_sub_field('name')) : ?>
+              <h3 class="course-include__element-header col-lg-4"><?php echo esc_html($name); ?></h3>
+            <?php endif; ?>
+
+            <?php if ($description = get_sub_field('description')) : ?>
+              <p class="course-include__element-text primary__text col-lg-8">
+                <?php echo esc_html($description); ?>
+              </p>
+            <?php endif; ?>
+          </div>
+        <?php endwhile; ?>
+      </div>
+    <?php endif; ?>
+  </article>
+
+
+
+  <!-- SHOW COURSE GRADUATES -->
+  <?php
+  $show_graduates = get_field('show_graduates');
+  if ($show_graduates) { ?>
+    <article class="graduates-slider col-xl-9 offset-xl-3" id="graduates">
+      <h2 class="graduates-slider__header">Kim są nasi absolwenci</h2>
+      <section class="slider swiper">
+        <div class="slider__slides swiper-wrapper">
+          <?php
+          $allGraduates = new WP_Query(array(
+            'post_type' => 'graduates',
+            'post_status' => 'publish',
+            'posts_per_page' => 15,
+            'orderby'   => 'meta_value',
+            'order' => 'ASC',
+          ));
+
+          while (($allGraduates)->have_posts()) :
+            $allGraduates->the_post();
+
+            $name = get_field('name');
+            $job = get_field('job');
+            $about = get_field('about');
+            $picture = get_field('picture');
+
+
+            $args = array(
+              'name' => $name,
+              'picture' => $picture,
+              'job-title' => $job,
+              'description' => $about
+            );
+
+            include(locate_template("components/each-slide-template.php", false, false));
+          endwhile;
+          wp_reset_postdata();
+          ?>
+        </div>
+        <div class="slider__dots swiper-pagination">
+        </div>
+      </section>
+    </article>
+  <?php }
+  ?>
+
+  <article class="java-payments col-xl-9 offset-xl-3" id="payments">
+
+    <?php
+    $payment_title = get_field('payment_title');
+    ?>
+    <h2 class="java-payments__header">
+      <?php echo esc_html($payment_title); ?>
+    </h2>
+
+    <div class="payment__container">
+      <?php if ($price = get_field('price')) : ?>
+        <div class="payment__amount col-lg-4"><?php echo $price; ?> zł</div>
+      <?php endif; ?>
+
+
+      <?php if (have_rows('payment_parts')) : ?>
+        <ul class="payment__list col-lg-8 col-xl-6">
+          <?php while (have_rows('payment_parts')) :
+            the_row(); ?>
+            <?php if ($part_description = get_sub_field('part_description')) : ?>
+              <li class="payment__item"><?php echo esc_html($part_description); ?></li>
+            <?php endif; ?>
+          <?php endwhile; ?>
+        </ul>
+      <?php endif; ?>
+
+    </div>
+  </article>
+
+
+
 
 </section>
 

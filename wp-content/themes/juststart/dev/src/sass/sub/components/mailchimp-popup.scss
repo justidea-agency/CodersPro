@@ -1,3 +1,7 @@
+body.no-scroll{
+  overflow: hidden;
+}
+
 .popup {
   width: 0;
   height: 0;
@@ -5,6 +9,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  z-index: -200;
   &__header {
     color: $secondary-color;
     text-align: center;
@@ -165,6 +170,9 @@
       margin-right: auto;
       visibility: visible;
       opacity: 1;
+      & form{
+
+      }
     }
   }
   @include media("sm") {
