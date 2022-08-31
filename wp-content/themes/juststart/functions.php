@@ -4,16 +4,15 @@ function justidea_files()
 {
 	wp_enqueue_script('scripts', get_theme_file_uri('/assets/js/app.js'), null, '1.0', true);
 	wp_enqueue_script('customs', get_theme_file_uri('/assets/js/custom.js'), null, '1.0', true);
+	wp_enqueue_script('ios-scroll-polyfill', get_theme_file_uri('/assets/js/scroll-polyfill.js'), null, '1.0', true);
 	wp_enqueue_style('styles', get_theme_file_uri('/assets/css/app.css'));
 	wp_enqueue_style('customs', get_theme_file_uri('/assets/css/custom.css'));
-	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap', false);
 
+	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap', false);
 
 	wp_enqueue_style('mailchimp-popup-basic-styles', '//cdn-images.mailchimp.com/embedcode/classic-071822.css', false);
 
 	wp_enqueue_script('mailchimp-integration', 	"https://chimpstatic.com/mcjs-connected/js/users/0059ea58e7ce77f971b62de73/12d24091e2085c706353d9c6c.js", false);
-
-
 
 	// only java-courses page
 	if (is_page(1444)) {
@@ -112,53 +111,29 @@ function wpdocs_custom_excerpt_length($length)
 {
 	return 30;
 }
+
+function my_secure_generator($generator, $type)
+{
+	return '';
+}
+
+function my_remove_src_version($src)
+{
+	global $wp_version;
+	$version_str = '?ver=' . $wp_version;
+	$offset = strlen($src) - strlen($version_str);
+	if ($offset >= 0 && strpos($src, $version_str, $offset) !== FALSE)
+		return substr($src, 0, $offset);
+	return $src;
+}
+
+add_filter('script_loader_src', 'my_remove_src_version');
+add_filter('style_loader_src', 'my_remove_src_version');
+
+add_filter('the_generator', 'my_secure_generator', 10, 2);
+
 add_filter('excerpt_length', 'wpdocs_custom_excerpt_length', 999);
+remove_action('wp_head', 'wp_generator');
 
-
-//Remove the slug from published post permalinks for our custom post types.
-// add_filter( 'post_type_link', function( $post_link, $post, $leavename ) {
-
-// 	$post_types = array(
-// 		'trasy',
-// 	);
-
-// 	if ( in_array( $post->post_type, $post_types ) && 'publish' === $post->post_status ) {
-// 		$post_link = str_replace( '/' . $post->post_type . '/', '/', $post_link );
-// 	}
-
-// 	return $post_link;
-
-// }, 10, 3 );
-
-/**
- * Some hackery to have WordPress match postname to any of our public post types.
- *
- * All of our public post types can have /post-name/ as the slug, so they better be unique across all posts
- * Typically core only accounts for posts and pages where the slug is /post-name/
- */
-// add_action( 'pre_get_posts', function( $query ) {
-
-	// Only noop the main query.
-	// if ( ! $query->is_main_query() ) {
-	// 	return;
-	// }
-
-	// Only noop our very specific rewrite rule match.
-	// if ( 2 != count( $query->query ) || ! isset( $query->query['page'] ) ) {
-	// 	return;
-	// }
-
-	// 'name' will be set if post permalinks are just post_name, otherwise the page rule will match.
-// 	if ( ! empty( $query->query['name'] ) ) {
-
-// 			$post_types = array(
-// 			'post', // important to  not break your standard posts
-// 			'page', // important to  not break your standard pages
-// 			'trasy',
-// 		);
-
-// 		$query->set( 'post_type', $post_types );
-
-// 	}
-
-// } );
+update_option('siteurl', 'https://coderspro.pl');
+update_option('home', 'https://coderspro.pl');
