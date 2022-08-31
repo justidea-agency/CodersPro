@@ -106,6 +106,57 @@
       padding-bottom: 60px;
     }
   }
+  .wpcf7-form-control-wrap:not([data-name="acceptance-809"], [data-name="acceptance-810"]) {
+    position: relative;
+    & label {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      margin-top: 0 !important;
+      font-size: 0.8rem;
+      color: $main-color;
+      background: $white;
+      transition: all 0.15s ease-out;
+      padding: 0 4px;
+      visibility: hidden;
+      opacity: 0;
+    }
+    &[data-name="file-513"] {
+      & label {
+        visibility: visible;
+        opacity: 1;
+        color: $text-color;
+        padding: 0 4px;
+        background: $white;
+        font-size: 0.9rem;
+        top: 19px;
+        transform: none;
+      }
+      &.focused label {
+        font-size: 0.9rem;
+        color: $main-color;
+        top: -12px;
+        z-index: 5;
+      }
+    }
+    &.focused label {
+      font-size: 0.9rem;
+      top: -32px;
+      transform: none;
+      transition: all 0.15s ease-out;
+      visibility: visible;
+      opacity: 1;
+    }
+    span.file-name{
+      position: absolute;
+      display: block;
+      font-size: 0.9rem;
+      color: $text-color;
+      top: 17px;
+      left: 14px;
+    }
+  }
   @include media("lg") {
     margin-top: 66px;
     margin-bottom: 66px;
@@ -178,7 +229,7 @@
       position: sticky;
       top: 150px;
       left: 20px;
-      padding-right:20px;
+      padding-right: 20px;
     }
     &__sidebar {
       display: block;
@@ -201,6 +252,9 @@
         height: 100%;
         font-weight: 700;
         padding-left: 23px;
+        line-height: 40px;
+        padding-top: 6px;
+        padding-bottom: 6px;
       }
     }
   }

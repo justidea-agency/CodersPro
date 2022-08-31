@@ -2,6 +2,7 @@ const contactBtns = document.querySelectorAll(
   '.menu-item-2902 > a');
 const coursesBtns = document.querySelectorAll('.course__btn');
 const overlay = document.querySelector('.popup-overlay');
+const footerContantctBtn = document.querySelector("#menu-item-4083");
 
 function handlePopupVisibility(e) {
   e.preventDefault();
@@ -11,6 +12,10 @@ function handlePopupVisibility(e) {
 }
 if (contactBtns.length > 0) {
   contactBtns.forEach(btn => btn.addEventListener('click', handlePopupVisibility));
+}
+
+if(footerContantctBtn){
+  footerContantctBtn.addEventListener('click', handlePopupVisibility)
 }
 
 if (coursesBtns.length > 0) {

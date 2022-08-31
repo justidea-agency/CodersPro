@@ -73,6 +73,11 @@
     flex-direction: column;
     margin-bottom: 8px;
   }
+  &__info{
+    & a{
+      z-index: 10;
+    }
+  }
   @include media("sm") {
     &__coderspro-wrapper {
       padding: 0 30px;
@@ -243,7 +248,8 @@
     #menu-item-282,
     #menu-item-285,
     #menu-item-286,
-    #menu-item-287 {
+    #menu-item-287,
+    #menu-item-4083 {
       padding-left: 30px;
     }
   }

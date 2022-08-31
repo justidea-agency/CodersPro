@@ -251,6 +251,8 @@
     margin-bottom: 68px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    width: max-content;
   }
   &__text {
     margin-bottom: 44px;
@@ -677,7 +679,7 @@
     }
     &:nth-of-type(2) {
       .finances-option__header {
-        padding: 0 40px;
+        padding: 0 10px;
       }
     }
     &__header {
@@ -688,7 +690,7 @@
       color: $secondary-color;
       margin-bottom: 20px;
     }
-    &__text {
+    &__text __btn{
       color: $text-color;
       font-size: 1rem;
       text-align: center;

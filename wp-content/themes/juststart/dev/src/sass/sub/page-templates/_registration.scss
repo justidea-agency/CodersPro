@@ -172,6 +172,32 @@ input[type="date"] {
   min-width: 0 !important;
 }
 
+.activenow-required-field{
+  position: relative;
+  & label{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    margin-top: 0 !important;
+    font-size: 0.8rem;
+    color: $main-color;
+    background: $white;
+    transition: all 0.15s ease-out;
+    padding: 0 4px;
+    visibility: hidden;
+    opacity: 0;
+  }
+  &.focused label{
+    font-size: 0.9rem;
+    top: 5px;
+    transform: none;
+    transition: all 0.15s ease-out;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 .activenow-form-field:not(.activenow-required-field) {
   margin-top: 10px !important;
   @include media("lg") {
@@ -193,7 +219,12 @@ input[type="date"] {
     margin-right: 9px !important;
     transform: translateY(3px) !important;
     outline: none !important;
+    padding: 0 !important;
+    &:checked{
+      border: 1px solid $main-color !important;
+    }
   }
+  
 }
 
 .activenow-form-container .activenow-form-field label {

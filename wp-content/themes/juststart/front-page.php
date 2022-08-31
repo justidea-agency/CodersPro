@@ -97,20 +97,21 @@ $hero_text = get_field('text_hero');
   </section>
 
   <section class="home-benefits container wrapper" id="co-nas-wyroznia">
-    <?php
-    $section_under_courses_header = get_field('section_under_courses_header');
-    $section_under_courses_text = get_field('section_under_courses_text');
-    $section_under_courses_text_2 = get_field('section_under_courses_text_2');
-    $section_under_courses_image = get_field('section_under_courses_image');
-
-    ?>
     <div class="home-benefits__content col-xl-5">
-      <h3 class="home-benefits__header secondary-header"><?php echo esc_html($section_under_courses_header); ?></h3>
-      <p class="home-benefits__text primary__text"> <?php echo esc_html($section_under_courses_text); ?></p>
-      <p class="home-benefits__text primary__text"><?php echo esc_html($section_under_courses_text_2); ?></p>
+
+      <?php if ($section_under_courses_header = get_field('section_under_courses_header')) : ?>
+        <h3 class="home-benefits__header secondary-header"><?php echo esc_html($section_under_courses_header); ?></h3>
+      <?php endif; ?>
+
+      <?php if ($section_under_courses_text = get_field('section_under_courses_text')) : ?>
+        <p class="home-benefits__text primary__text"> <?php echo esc_html($section_under_courses_text); ?></p>
+      <?php endif ?>
+      <?php if ($section_under_courses_text_2 = get_field('section_under_courses_text_2')) : ?>
+        <p class="home-benefits__text primary__text"><?php echo esc_html($section_under_courses_text_2); ?></p>
+      <?php endif; ?>
     </div>
     <div class="home-benefits__img-container col-xl-6 offset-xl-1">
-      <?php if ($section_under_courses_image) : ?>
+      <?php if ($section_under_courses_image = get_field('section_under_courses_image')) : ?>
         <img src="<?php echo esc_url($section_under_courses_image['url']); ?>" alt="<?php echo esc_attr($section_under_courses_image['alt']); ?>" />
       <?php endif; ?>
       <div class="primary-image-layer"></div>
@@ -118,22 +119,24 @@ $hero_text = get_field('text_hero');
   </section>
 
   <section class="home-work container wrapper" id="praca-po-kursie">
-    <?php
-    $section_work_header = get_field('section_under_courses_2_header');
-    $section_work_text = get_field('section_under_courses_2_text');
-    $section_work_text_2 = get_field('section_under_courses_2_text_2');
-    $section_work_text_3 = get_field('section_under_courses_2_text_3');
-    $section_work_image = get_field('section_under_courses_2_img');
-
-    ?>
     <div class="home-work__content col-xl-5 offset-xl-1">
-      <h3 class="home-work__header secondary-header "><?php echo esc_html($section_work_header); ?></h3>
-      <p class="home-work__text primary__text"> <?php echo esc_html($section_work_text); ?></p>
-      <p class="home-work__text primary__text"><?php echo esc_html($section_work_text_2); ?></p>
-      <p class="home-work__text primary__text"><?php echo esc_html($section_work_text_3); ?></p>
+
+      <?php if ($section_work_header = get_field('section_under_courses_2_header')) : ?>
+        <h3 class="home-work__header secondary-header "><?php echo esc_html($section_work_header); ?></h3>
+      <?php endif; ?>
+      <?php if ($section_work_text = get_field('section_under_courses_2_text')) : ?>
+        <p class="home-work__text primary__text"> <?php echo esc_html($section_work_text); ?></p>
+      <?php endif; ?>
+      <?php if ($section_work_text_2 = get_field('section_under_courses_2_text_2')) : ?>
+        <p class="home-work__text primary__text"><?php echo esc_html($section_work_text_2); ?></p>
+      <?php endif; ?>
+      <?php if ($section_work_text_3 = get_field('section_under_courses_2_text_3')) : ?>
+        <p class="home-work__text primary__text"><?php echo esc_html($section_work_text_3); ?></p>
+      <?php endif; ?>
+
     </div>
     <div class="home-work__img-container col-xl-6">
-      <?php if ($section_work_image) : ?>
+      <?php if ($section_work_image = get_field('section_under_courses_2_img')) : ?>
         <img src="<?php echo esc_url($section_work_image['url']); ?>" alt="<?php echo esc_attr($section_work_image['alt']); ?>" />
       <?php endif; ?>
       <div class="primary-image-layer"></div>
@@ -147,17 +150,15 @@ $hero_text = get_field('text_hero');
     <div class="home-finances__decorator dec-4"></div>
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/finances/finances-decorator-4.svg" alt="Decorative Image" class="home-finances__decorator dec-5">
 
-    <?php
-    $finanse_header = get_field('finanse_header');
-    $finanse_parts_header = get_field('finanse_parts_header');
-    $finanse_payment_options_header = get_field('finanse_payment_options_header');
-    ?>
-
     <h4 class="home-finances__header">
-      <?php echo esc_html($finanse_header); ?>
+      <?php if ($finanse_header = get_field('finanse_header')) : ?>
+        <?php echo esc_html($finanse_header); ?>
+      <?php endif; ?>
     </h4>
     <p class="home-finances__subtitle">
-      <?php echo esc_html($finanse_parts_header); ?>
+      <?php if ($finanse_parts_header = get_field('finanse_parts_header')) : ?>
+        <?php echo esc_html($finanse_parts_header); ?>
+      <?php endif; ?>
     </p>
 
 
@@ -176,9 +177,11 @@ $hero_text = get_field('text_hero');
       </ul>
     <?php endif; ?>
 
-    <h5 class="home-finances__options-header">
-      <?php echo esc_html($finanse_payment_options_header); ?>
-    </h5>
+    <?php if ($finanse_payment_options_header = get_field('finanse_payment_options_header')) : ?>
+      <h5 class="home-finances__options-header">
+        <?php echo esc_html($finanse_payment_options_header); ?>
+      </h5>
+    <?php endif; ?>
 
     <?php if (have_rows('finanse_payment_options')) : ?>
       <div class="home-finances__options">
@@ -214,7 +217,7 @@ $hero_text = get_field('text_hero');
 
   </section>
 </main>
-<?php 
-  include(locate_template("components/informator-section.php", false, false));
+<?php
+include(locate_template("components/informator-section.php", false, false));
 ?>
 <?php get_footer(); ?>

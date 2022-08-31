@@ -301,6 +301,9 @@
     height: 100%;
     font-weight: 700;
     padding-left: 23px;
+    line-height: 40px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
   @include media("xl") {
     display: block;

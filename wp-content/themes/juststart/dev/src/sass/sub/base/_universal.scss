@@ -59,18 +59,19 @@ p {
   border: 1px solid $text-color;
   outline: none;
   width: 100%;
-  transition: all .3s ease-out;
+  transition: all 0.3s ease-out;
   max-width: 690px;
   &::placeholder {
     color: $text-color;
-    transition: all .3s ease-out;
-  };
-  &:focus, &:focus-visible{
+    transition: all 0.3s ease-out;
+  }
+  &:focus,
+  &:focus-visible {
     border: 1px solid $main-color;
-    transition: all .3s ease-out;
-    &::placeholder{
+    transition: all 0.3s ease-out;
+    &::placeholder {
       color: transparent;
-      transition: all .3s ease-out;
+      transition: all 0.3s ease-out;
     }
   }
 }
@@ -86,26 +87,48 @@ input[type="file"].coders-input {
   height: 100%;
   padding: 14px 14px;
   position: relative;
-  &::before {
-    content: "Dodaj CV";
-    position: absolute;
-    color: $text-color;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 14px;
-    width: 100%;
-    height: 100%;
-  }
 }
 
-input[type='checkbox']{
+input[type="checkbox"] {
+  box-sizing: content-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  position: relative;
   width: 19px;
   height: 19px;
   outline: none;
   border: 1px solid $text-color;
   border-radius: 5px;
   margin-right: 9px;
-  transform: translateY(3px);
+  transform: translateY(4px);
+  cursor: pointer;
+  overflow: hidden;
+  &::before {
+    content: "";
+    color: $main-color;
+    position: absolute;
+    width: 24px;
+    height: 14px;
+    top: 50%;
+    left: 50%;
+    background-color: transparent;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    background: url("../img/check-mark-icon.svg") no-repeat center;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.25s ease-in-out;
+  }
+  &:checked {
+    border: 1px solid $main-color;
+    transition: all 0.25s ease-in-out;
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
 }
 
 .page-header {

@@ -54,6 +54,7 @@
     outline: none;
     border: none;
     width: max-content;
+    cursor: pointer;
     &:hover {
       background: $secondary-color;
       color: $white;
